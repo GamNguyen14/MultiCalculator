@@ -26,6 +26,10 @@ class MainActivity : ComponentActivity() {
     }
     @Composable
     fun CalcNumericButton(number: Int, display: MutableState<String>) {
+        Button(onClick = {display.value +=number.toString()},
+            modifier = Modifier.padding(4.dp)) {
+            Text(number.toString())
+        }
     }
     @Composable
     fun CalcOperationButton(operation: String, display: MutableState<String>) {
