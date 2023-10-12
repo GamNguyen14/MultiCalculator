@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
     fun CalcNumericButton() {
     }
     @Composable
-    fun CalcOperationButton() {
+    fun CalcOperationButton(operation: String, display: MutableState<String>) {
     }
     @Composable
     fun CalcEqualsButton(display: MutableState<String>) {
