@@ -11,6 +11,25 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.multicalculator.Greeting
 
 class MainActivity : ComponentActivity() {
+    @Composable
+    fun CalvView(){
+
+    }
+    @Composable
+    fun CalcRow() {
+    }
+    @Composable
+    fun CalcDisplay() {
+    }
+    @Composable
+    fun CalcNumericButton() {
+    }
+    @Composable
+    fun CalcOperationButton() {
+    }
+    @Composable
+    fun CalcEqualsButton() {
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
