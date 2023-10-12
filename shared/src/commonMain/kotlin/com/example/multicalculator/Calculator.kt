@@ -5,7 +5,7 @@ class Calculator {
         return left + right
     }
 
-    fun minus(left: Int, right: Int): Int {
+    fun subtract(left: Int, right: Int): Int {
         return left - right
     }
 
@@ -15,5 +15,28 @@ class Calculator {
 
     fun multiply(left: Int, right: Int): Int {
         return left * right
+    }
+    fun CalcView() {
+
+    }
+
+    fun CalcRow() {
+
+    }
+
+    fun CalcDisplay() {
+
+    }
+
+    fun CalcNumericButton() {
+
+    }
+
+    fun CalcOperationButton() {
+
+    }
+
+    fun CalcEqualsButton() {
+
     }
 }
