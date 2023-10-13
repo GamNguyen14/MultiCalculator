@@ -31,6 +31,20 @@ class MainActivity : ComponentActivity() {
             .fillMaxSize()){
             Row {CalcDisplay(display = displayText)}
             Row {
+                Column {
+                    for (i in 7 downTo 1 step 3)
+                        CalcRow(display = displayText, startNum = i, numButtons = 3)
+                    Row {
+                        CalcNumericButton(number = 0, display = displayText)
+                        CalcEqualsButton(display = displayText)
+                    }
+                Column {
+                    CalcOperationButton(operation = "+", display = displayText)
+                    CalcOperationButton(operation = "-", display = displayText)
+                    CalcOperationButton(operation = "*", display = displayText)
+                    CalcOperationButton(operation = "/", display = displayText)
+                    }
+                }
 
                 }
             }
