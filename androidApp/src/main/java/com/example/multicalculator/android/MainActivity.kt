@@ -18,24 +18,35 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-//import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-//import com.example.multicalculator.Greeting
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
-                CalcView()
-            }
+            CalcView()
         }
     }
+
+    @Composable
+    fun Greeting(text: String) {
+        Text(text = text)
+    }
+
+    @Preview
+    @Composable
+    fun DefaultPreview() {
+        MyApplicationTheme {
+            CalcView()
+        }
+    }
+
 
     @Composable
     fun CalcView() {
@@ -45,7 +56,8 @@ class MainActivity : ComponentActivity() {
         Column(
             modifier = Modifier
                 .background(Color.White)
-                .fillMaxSize().padding(15.dp)
+                .fillMaxSize()
+                .padding(15.dp)
         ) {
             Row { CalcDisplay(display = displayText) }
             Row {
@@ -55,9 +67,7 @@ class MainActivity : ComponentActivity() {
                     Row {
                         CalcNumericButton(number = 0, displayText)
                         CalcEqualsButton(displayText)
-
                     }
-
                 }
                 Column {
                     CalcOperationButton(operation = "+")
@@ -92,7 +102,9 @@ class MainActivity : ComponentActivity() {
     fun CalcNumericButton(number: Int, display: MutableState<String>) {
         Button(
             onClick = { display.value += number.toString() },
-            modifier = Modifier.padding(4.dp).size(80.dp), shape = CircleShape
+            modifier = Modifier
+                .padding(4.dp)
+                .size(80.dp), shape = CircleShape
         ) {
             Text(number.toString(), fontSize = 40.sp, fontWeight = FontWeight.Bold)
         }
@@ -101,20 +113,22 @@ class MainActivity : ComponentActivity() {
     fun CalcOperationButton(operation: String) {
         Button(
             onClick = { /*TODO*/ },
-            modifier = Modifier.padding(4.dp).size(80.dp), shape = CircleShape
+            modifier = Modifier
+                .padding(4.dp)
+                .size(80.dp), shape = CircleShape
         ) {
-            Text(operation, fontSize = 40.sp, fontWeight = FontWeight.Bold,)
+            Text(operation, fontSize = 40.sp, fontWeight = FontWeight.Bold)
         }
     }
     @Composable
     fun CalcEqualsButton(display: MutableState<String>) {
         Button(
             onClick = { display.value = "0" },
-            modifier = Modifier.padding(4.dp).size(80.dp), shape = CircleShape
+            modifier = Modifier
+                .padding(4.dp)
+                .size(80.dp), shape = CircleShape
         ) {
             Text("=", fontSize = 40.sp, fontWeight = FontWeight.Bold)
-
-
         }
     }
 }
