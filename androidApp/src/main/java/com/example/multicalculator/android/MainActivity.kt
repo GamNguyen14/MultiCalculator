@@ -105,7 +105,7 @@ class MainActivity : ComponentActivity() {
 
         Column(
             modifier = Modifier
-                .background(Color.White)
+                .background(Color.LightGray)
                 .fillMaxSize()
                 .padding(15.dp)
         ) {
@@ -120,10 +120,10 @@ class MainActivity : ComponentActivity() {
                     }
                 }
                 Column {
-                    CalcOperationButton(operation = "+", onPress = {op -> operationPress(op)} )
-                    CalcOperationButton(operation = "-", onPress = {op -> operationPress(op) }  )
-                    CalcOperationButton(operation = "*", onPress = {op -> operationPress(op)}  )
-                    CalcOperationButton(operation = "/", onPress = {op -> operationPress(op)} )
+                    CalcOperationButton(operation = "+", onPress = {op -> operationPress(op)})
+                    CalcOperationButton(operation = "-", onPress = {op -> operationPress(op)})
+                    CalcOperationButton(operation = "*", onPress = {op -> operationPress(op)})
+                    CalcOperationButton(operation = "/", onPress = {op -> operationPress(op)})
                 }
             }
         }
@@ -154,9 +154,9 @@ class MainActivity : ComponentActivity() {
             onClick = { onPress(number)},
             modifier = Modifier
                 .padding(4.dp)
-                .size(80.dp), shape = CircleShape
+                .size(80.dp), shape = CircleShape,colors = ButtonDefaults.buttonColors(backgroundColor = Color.Black)
         ) {
-            Text(number.toString(), fontSize = 40.sp, fontWeight = FontWeight.Bold)
+            Text(number.toString(), fontSize = 40.sp, fontWeight = FontWeight.Bold, color = Color.Yellow)
         }
     }
     @Composable
@@ -165,9 +165,9 @@ class MainActivity : ComponentActivity() {
             onClick = { onPress(operation) },
             modifier = Modifier
                 .padding(4.dp)
-                .size(80.dp), shape = CircleShape
+                .size(80.dp), shape = CircleShape,colors = ButtonDefaults.buttonColors(backgroundColor = Color.Black)
         ) {
-            Text(operation, fontSize = 40.sp, fontWeight = FontWeight.Bold)
+            Text(operation, fontSize = 40.sp, fontWeight = FontWeight.Bold, color = Color.Yellow)
         }
     }
     @Composable
@@ -176,9 +176,9 @@ class MainActivity : ComponentActivity() {
             onClick = { onPress()},
             modifier = Modifier
                 .padding(4.dp)
-                .size(80.dp), shape = CircleShape
+                .size(80.dp), shape = CircleShape, colors = ButtonDefaults.buttonColors(backgroundColor = Color.Black)
         ) {
-            Text("=", fontSize = 40.sp, fontWeight = FontWeight.Bold)
+            Text("=", fontSize = 40.sp, fontWeight = FontWeight.Bold, color = Color.Yellow)
         }
     }
 }
